@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 태그 값 -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<script>
+    var lis = document.getElementsByTagName('li');
+    for(var i=0; i < lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+
+
+<!-- 태그 값 -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ol>
+<script>
+    var ul = document.getElementsByTagName('ul')[0];
+    var lis = ul.getElementsByTagName('li');
+    for(var i=0; lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+
+
+<!-- class 값 -->
+<ul>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li class="active">JavaScript</li>
+</ul>
+<script>
+    var lis = document.getElementsByClassName('active');
+    for(var i=0; i < lis.length; i++){
+        lis[i].style.color='red';
+    }
+</script>
+
+
+<!-- id 값 -->
+<ul>
+    <li>HTML</li>
+    <li id="active">CSS</li>
+    <li>JavaScript</li>
+</ul>
+<script>
+    var li = document.getElementById('active');
+    li.style.color='red';
+</script>
+
+
+<!-- css의 선택자 문법 값 -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li>JavaScript</li>
+</ol>
+
+<script>
+    // 하나의 앨리먼트만 선택
+    var li = document.querySelector('li');
+    li.style.color='red';
+    var li = document.querySelector('.active');
+    li.style.color='blue';
+</script>
+
+
+<!-- css의 선택자 문법 값 -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li>JavaScript</li>
+</ol>
+
+<script>
+    // 여러 앨리먼트를 선택
+    var lis = document.querySelectorAll('li');
+    for(var name in lis){
+        lis[name].style.color = 'blue';
+    }
+</script>
+
+</body>
+</html>
