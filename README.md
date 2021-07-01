@@ -1,6 +1,6 @@
 # JavaScript Study
 
-### [10 Days of JavaScript](./10days_javascript)
+### [10 Days of JavaScript](./10days-javascript)
 
 > HackerRank의 10 Days of JavaScript Challenge
 
