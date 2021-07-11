@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        let 현재값;
+        let 변환상수 = 10;
+
+        const select = document.querySelector('select');
+        const p = document.querySelector('p');
+        const first = document.querySelector('#first');
+        const second = document.querySelector('#second');
+
+        const calculate = (value) => {
+          value == 2 ? (second.value = (현재값 * 변환상수).toFixed(2)) : (first.value = (현재값 * 변환상수).toFixed(2));
+        };
+
+        select.addEventListener('change', (event) => {
+          const options = event.currentTarget.options;
+          const index = event.currentTarget.options.selectedIndex;
+          변환상수 = Number(options[index].value);
+          calculate(2);
+        });
+
+        first.addEventListener('keyup', (event) => {
+          현재값 = Number(event.currentTarget.value);
+          if (isNaN(현재값)) {
+            p.textContent = '숫자를 입력해주세요';
+          }
+          calculate(2);
+        });
+
+        second.addEventListener('keyup', (evnet) => {
+          현재값 = Number(event.currentTarget.value);
+          if (isNaN(현재값)) {
+            p.textContent = '숫자를 입력해주세요';
+          }
+          calculate(1);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input id="first" type="text" /> cm =
+    <input id="second" type="text" />
+    <select>
+      <option value="10">mm</option>
+      <option value="0.01">m</option>
+      <option value="0.393701">inch</option>
+    </select>
+    <p></p>
+  </body>
+</html>
